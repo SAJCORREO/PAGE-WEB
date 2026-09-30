@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Instanciamos el nombre de la pagina y los iconos que apareceran en los navegadores -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAJ TECHNOLOGIES</title>
+    <link rel="icon" href="/IMAGE/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/IMAGE/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/IMAGE/android-chrome-192x192.png">
+    <!-- Aqui llamamos a las clases de CSS-->
+    <link rel="stylesheet" href="./CSS/normalize.css">
+    <link rel="stylesheet" href="./CSS/stilesIndex.css">
+    <!--Pondremos el como se vera al  momento de aparecer en la web-->
+    <meta  name="theme-color" content="#2091f9">    
+    <meta name="title" content="SAJ TECHNOLOGIES">
+    <meta name="Somos una empresa mexicana especializada en ingeniería para la integración industrial. Nos enfocamos en diseño, instalación y optimización de sistemas clave, como máquinas de calidad, sistemas de visión, maquinaria de ensamblaje y rastreo en líneas de producción.">
+</head>
+        
+<body>
+    <header class="hero" id="principal">
+        <!--Aqui pondremos lo que queremos que nos aparezca  en la parte de arriba-->
+        <nav class="nav container">
+            <div class="nav__logo">
+                <img src="./IMAGE/logoSAJ.png" alt="SAJ Technologies" class="nav__logo-img">
+            </div>
+            <!--Pondremos los links que utilizaremos para movernos en la pagina-->
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="#principal" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#servicios" class="nav__links">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#Principios" class="nav__links">Principios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#Relaciones" class="nav__links">Relaciones</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#pie" class="nav__links">Contacto</a>
+                </li>
+                <!--Pondremos un icon para la parte movil de cerrar-->
+                <img src="ICONS/close.svg" alt="cerrar menu" class="nav__close">
+            </ul>
+            <!--Pondremos un icon para la parte movil para abrir-->
+            <div class="nav__menu">
+                <img src="ICONS/list.svg" alt="Logo" class="nav__img">
+            </div>
+        </nav>
+        <!-- Lo que tenemos una vez entramos a la pagina -->
+        <section class="hero__container container">
+            <h1 class="hero__title">Integración y automatización en el Bajío.</h1>
+            <p class="hero__paragraph">Somos SAJ una empresa mexicana multidisciplinaria que se especializa en integración de proyectos, que unifica las áreas de la ingeniería y el trabajo técnico para poder satisfacer todas las necesidades de nuestros clientes.</p>
+            <!--<a href="#servicios" class="cta">Conocer mas</a>-->
+        </section>
+
+    </header>
+    
+    <main>
+        <section class="services container reveal" id="servicios">
+            <h2 class="services__title">Nosotros somos especialistas en</h2>
+
+            <h2 class="services__index">-Servicios de Ingeniería-</h2>
+            <div class="services__grid">
+                <!--Tarjeta numero 1-->
+                <article class="services__card" onclick="openServiceModal(1)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/diseño_electrico.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Diseño Eléctrico</h3>
+                    <p class="services__paragraph">Elaboración de esquemas y arquitectura de control eléctrico para maquinaria e integración industrial.</p>
+                </article>
+
+                <!--Tarjeta numero 2-->
+                <article class="services__card" onclick="openServiceModal(2)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/diseño_mecanico.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Diseño Mecánico</h3>
+                    <p class="services__paragraph">Modelado y conceptualización de estructuras, fixture, herramentales y celdas de trabajo mediante CAD 3D.</p>
+                </article>
+
+                <!--Tarjeta numero 3-->
+                <article class="services__card" onclick="openServiceModal(3)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/plcs.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Ingeniería En Control (PLCs)</h3>
+                    <p class="services__paragraph">Automatización y lógica de procesos mediante la programación de controladores lógicos programables (PLC) e interfaces de usuario.</p>
+                </article>
+
+                <!--Tarjeta numero 4-->
+                <article class="services__card" onclick="openServiceModal(4)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/robotica_industrial.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Robótica Industrial.</h3>
+                    <p class="services__paragraph">Integración de brazos robóticos y cobots (robots colaborativos) para la automatización de procesos repetitivos y de alta precisión.</p>
+                </article>
+
+                <!--Tarjeta numero 5-->
+                <article class="services__card" onclick="openServiceModal(5)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/ingenieria_de_vision.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Ingeniería De Visión</h3>
+                    <p class="services__paragraph">Implementación de sistemas de inspección óptica y detección mediante cámaras avanzadas e inteligencia artificial.</p>
+                </article>
+            </div>
+
+            <h2 class="services__index">-Servicios Técnicos-</h2>
+            <div class="services__grid">
+                <!--Tarjeta numero 6-->
+                <article class="services__card" onclick="openServiceModal(6)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/ensamble_de_proyectos.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Ensamble De Proyectos.</h3>
+                    <p class="services__paragraph">Integración física y montaje estructural de celdas, estaciones de trabajo y líneas de producción.</p>
+                </article>
+
+                <!--Tarjeta numero 7-->
+                <article class="services__card" onclick="openServiceModal(7)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/instalacion.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Instalación, Puesta En Marcha & Soporte.</h3>
+                    <p class="services__paragraph">Implementación en planta del cliente, arranque de equipos y acompañamiento técnico continúo.</p>
+                </article>
+
+                <!--Tarjeta numero 8-->
+                <article class="services__card" onclick="openServiceModal(8)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/mantenimiento.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Mantenimiento Industrial.</h3>
+                    <p class="services__paragraph">Servicios preventivos y correctivos para maximizar el tiempo de vida de la maquinaria y evitar paros no planificados.</p>
+                </article>
+
+                <!--Tarjeta numero 9-->
+                <article class="services__card" onclick="openServiceModal(9)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/paileria.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Pailería Industrial.</h3>
+                    <p class="services__paragraph">Fabricación y soldadura de estructuras metálicas, guardas de seguridad y soportería pesada.</p>
+                </article>
+
+                <!--Tarjeta numero 10-->
+                <article class="services__card" onclick="openServiceModal(10)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/maquinados.jpg" alt="PLCS" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Maquinados industriales.</h3>
+                    <p class="services__paragraph">Fabricación de piezas mecánicas de alta precisión mediante procesos de maquinado CNC y convencional.</p>
+                </article>
+            </div>
+            <!--
+            <div class="services__more">
+                <h3 class="services__title">Conoce mas acerca de nuestros proyectos terminados</h3>
+                <a href="#", class="services_cta">Conooce mas</a>
+            </div>
+            -->
+        </section> 
+
+        <section class="beggin reveal" id="Principios">
+            <div class="container">
+                <!-- Ventana visible del carrusel -->
+                <div class="beggin__window">
+                    <h2 class="beggin__title">Nuestros Principios Corporativos</h2>
+                    <!-- Carril que se moverá horizontalmente -->
+                    <div class="beggin__track">
+
+                        <!-- Diapositiva 1 -->
+                        <article class="beggin__slide">
+                            <div class="beggin__content">
+                                <span class="beggin__tag beggin__tag--mision">MISIÓN</span>
+                                <p class="beggin__paragraph">
+                                    Mantener la calidad de nuestros servicios en los más altos estándares internacionales. Nos capacitamos de manera continua en nuevas tecnologías y mejoramos nuestros sistemas para lograr una mayor eficiencia y tiempos de respuesta adecuados, permitiéndonos así satisfacer la demanda de nuestros servicios y alcanzar la total satisfacción del cliente.
+                                </p>
+                            </div>
+                            <div class="beggin__media">
+                                <img src="/ICONS/mision.svg" alt="Misión" class="beggin__icon">
+                            </div>
+                        </article>
+
+                        <!-- Diapositiva 2 -->
+                        <article class="beggin__slide">
+                            <div class="beggin__content">
+                                <span class="beggin__tag beggin__tag--vision">VISIÓN</span>
+                                <p class="beggin__paragraph">
+                                    <br>
+                                        Ser el principal socio de nuestros clientes, colaborando conjuntamente en la conceptualización  de sus proyectos, aportando ideas de valor en pro de buscar la eficiencia, tomando en cuenta los recursos con los que se cuenta a fin de realizar una entrega puntual del proyecto, teniendo como estandarte la calidad y responsabilizándonos de llevar exitosamente la implementación del proyecto.
+                                    <br>
+                                </p>
+                            </div>
+                            <div class="beggin__media">
+                                <img src="/ICONS/vision.svg" alt="Visión" class="beggin__icon">
+                            </div>
+                        </article>
+
+                        <!-- Diapositiva 3 -->
+                        <article class="beggin__slide">
+                            <div class="beggin__content">
+                                <span class="beggin__tag beggin__tag--valores">VALORES</span>
+                                <p class="beggin__paragraph">
+                                    <strong>Honestidad</strong><br>
+                                    <strong>Lealtad</strong><br>
+                                    <strong>Perseverancia</strong><br>
+                                </p>
+                            </div>
+                            <div class="beggin__media">
+                                <img src="/ICONS/valores.svg" alt="Valores" class="beggin__icon">
+                            </div>
+                        </article>
+
+                        <!-- Diapositiva 4 -->
+                        <article class="beggin__slide">
+                            <div class="beggin__content">
+                                <span class="beggin__tag beggin__tag--mejora">MEJORA CONTINUA</span>
+                                <p class="beggin__paragraph">
+                                    Presentamos un equipo de trabajo multidisciplinario enfocado en alcanzar la plena satisfacción del cliente.
+                                    <strong>·</strong>Documentamos y mejoramos constantemente nuestros procesos.<br>
+                                    <strong>·</strong>Implementamos sistemas que aseguran la eficiencia y precisión en nuestras operaciones.<br>
+                                    <strong>·</strong>Utilizamos herramientas de gestión de proyectos como mecanismo de retroalimentación para optimizar nuestra labor.<br>
+                                </p>
+                            </div>
+                            <div class="beggin__media">
+                                <img src="/ICONS/mejora.svg" alt="Mejora" class="beggin__icon">
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Puntos de navegación inferiores -->
+                    <div class="beggin__dots">
+                        <button class="beggin__dot beggin__dot--active" aria-label="Ir a diapositiva 1"></button>
+                        <button class="beggin__dot" aria-label="Ir a diapositiva 2"></button>
+                        <button class="beggin__dot" aria-label="Ir a diapositiva 3"></button>
+                        <button class="beggin__dot" aria-label="Ir a diapositiva 4"></button>
+                    </div>
+
+                </div>
+            </div>            
+        </section>
+
+        <section class="relation reveal" id="Relaciones">
+            <!-- Red de fondo para el efecto de constelación -->
+            <div class="relation__bg-grid"></div>
+
+            <h2 class="relation__tittle">Nuestros Clientes</h2>
+            <div class="relation__clients">
+                <div class="relation__node" data-node="1">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/micheline.jpg" alt="Michelin" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="2">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/plastic_omnium.webp" alt="Plastic Omnium" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="3">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/herdez.png" alt="Grupo Herdez" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="4">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/isocinou.webp" alt="Isocindu" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="6">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/hope.jpeg" alt="hope global" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="7">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/topy.jpg" alt="topy" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="9">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/op-mobility.webp" alt="grupo op mobility" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="10">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/kasai.webp" alt="kasai" class="relation__img">
+                </div>
+                <div class="relation__node" data-node="11">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/clientes/woco.png" alt="woco" class="relation__img">
+                </div>
+            </div>
+
+            <h2 class="relation__tittle">Nuestros Socios</h2>
+            <div class="relation__partnership">
+                <div class="relation__node relation__node--partner" data-node="14">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/asociation/urmek.png"Urmek" class="relation__img">
+                </div>
+                <div class="relation__node relation__node--partner" data-node="15">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/asociation/gurego.png" alt="Gurego" class="relation__img">
+                </div>
+                <div class="relation__node relation__node--partner" data-node="16">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/asociation/boltronic.webp" alt="boltronic" class="relation__img">
+                </div>
+                <div class="relation__node relation__node--partner" data-node="17">
+                    <span class="relation__pin"></span>
+                    <img src="IMAGE/asociation/aufentec.png" alt="aufentec" class="relation__img">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="pie">
+        <div class="footer__card container">
+            <section class="footer__container">
+                <!-- Columna 1: Nombre de la Empresa -->
+                <div class="footer__col">
+                    <img src="./IMAGE/logo-saj-T.png" alt="SAJ Technologies" class="nav__logo-img">
+                    <h2 class="footer__name">SAJ CONTROLS S.A. de C.V.</h2>
+                </div>  
+
+                <!-- Columna 2: Información de Contacto -->
+                <div class="footer__col">
+                    <div class="footer__info-group">
+                        <h3 class="footer__title">Horario</h3>
+                        <p class="footer__subtitle">Lunes a Viernes: 9:30am - 07:00pm</p>                
+                    </div>      
+                    <div class="footer__info-group">
+                        <h3 class="footer__title">Ubicacion</h3>
+                        <p class="footer__subtitle">Leon,Gto México</p>                
+                    </div>    
+                    <div class="footer__info-group">               
+                        <h3 class="footer__title">Número De Oficina</h3>
+                        <p class="footer__subtitle">(+52) (477) 829 7793</p>
+                    </div>        
+                </div>
+
+                <!-- Columna 3: Botón de Contacto Directo -->
+                <div class="footer__col">
+                    <h3 class="footer__title">Contáctanos</h3>
+                    <p class="footer__subtitle">contacto@sajtechnologies.com</p>
+                    
+                    <p class="footer__divider">Ó escríbenos directamente</p>
+                    <button type="button" class="services_cta" onclick="openContactModal()">Contáctanos</button>
+                </div>
+            </section> 
+
+            <section class="footer__copy">
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/profile.php?id=61558043161836" class="footer__icon-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/facebook.svg" alt="facebook" class="footer__img">
+                    </a>
+                    <a href="https://www.instagram.com/saj.technologies?utm_source=qr&stkn=MTd3dXBuNDQ3dDVzNw==" class="footer__icon-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/instagram.svg" alt="instagram" class="footer__img">
+                    </a>
+                    <a href="https://www.tiktok.com/@saj.technologies?_r=1&_t=ZS-99z2scmjDMq" class="footer__icon-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/tiktok.svg" alt="tiktok" class="footer__img">
+                    </a>
+                    <a href="https://www.youtube.com/@SAJTECHNOLOGIES" class="footer__icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/youtube.svg" alt="youtube" class="footer__img">
+                    </a>
+                    <a href="https://www.linkedin.com/in/saj-technologies-a21870301" class="footer__icon-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/linkedin.svg" alt="linkedin" class="footer__img">
+                    </a>
+                </div>
+
+                <p class="footer__copyright">Copyright (C) 2026 SAJ TECHNOLOGIES. All Rights Reserved.</p>
+            </section>
+        </div>
+    </footer>
+
+    <!-- MODAL DINÁMICO DE SERVICIOS -->
+    <div class="service-modal" id="serviceModal">
+        <div class="service-modal__backdrop" onclick="closeServiceModal()"></div>
+        
+        <div class="service-modal__container">
+            <button class="service-modal__close" onclick="closeServiceModal()">✕</button>
+            
+            <div class="service-modal__content">
+                <span class="service-modal__tag" id="modalCategory">ÁREA ESPECIALIZADA</span>
+                <h2 class="service-modal__title" id="modalTitle">Nombre del Servicio</h2>
+                
+                <div class="service-modal__grid" id="modalGrid">
+                    <!-- Columna Izquierda: Descripción Fija -->
+                    <div class="service-modal__info">
+                        <h3>¿Qué es?</h3>
+                        <p id="modalDescription">Cargando información...</p>
+                        
+                        <h3>¿Qué hacemos en SAJ?</h3>
+                        <p id="modalScope">Cargando alcance...</p>
+                    </div>
+                    
+                    <!-- Columna Derecha: Galería con imágenes grandes -->
+                    <div class="service-modal__media" id="modalMedia">
+                        <h3>Fotos Relacionadas</h3>
+                        <div class="service-modal__gallery" id="modalGallery">
+                            <!-- Imágenes cargadas dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DINÁMICO DE CONTACTO -->
+    <div class="contact-modal" id="contactModal">
+        <div class="contact-modal__backdrop" onclick="closeContactModal()"></div>
+        
+        <div class="contact-modal__container">
+            <button class="contact-modal__close" onclick="closeContactModal()">✕</button>
+            
+            <div class="contact-modal__content">
+                <span class="contact-modal__tag">ATENCIÓN POR CORREO</span>
+                <h2 class="contact-modal__title">Ponte en contacto con SAJ</h2>
+                
+                <div class="contact-modal__grid">
+                    <!-- Columna Izquierda: Datos de atención -->
+                    <div class="contact-modal__info">
+                        <h3>Atención Directa</h3>
+                        <p>Cuéntanos sobre tus requerimientos de ingeniería, automatización o mantenimiento industrial. Nuestro equipo te responderá a la brevedad.</p>
+                        
+                        <div class="contact-modal__details">
+                            <div class="contact-modal__item">
+                                <strong>Correo Oficial:</strong>
+                                <p>contacto@sajtechnologies.com</p>
+                            </div>
+                            <div class="contact-modal__item">
+                                <strong>Teléfono de Oficina:</strong>
+                                <p>(+52) (477) 829 7793</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Columna Derecha: Formulario Web3Forms -->
+                    <div class="contact-modal__form-wrapper">
+                        <form id="contactForm" class="contact-modal__form">
+                            <!-- Clave pública de Web3Forms -->
+                            <input type="hidden" name="access_key" value="82830a65-3637-4b59-805d-ada1cfc5cceb">
+                            
+                            <div class="contact-modal__field">
+                                <label for="contactName">Su nombre*</label>
+                                <input type="text" id="contactName" name="name" placeholder="Tu nombre o empresa" required class="contact-modal__input">
+                            </div>
+                            
+                            <div class="contact-modal__field">
+                                <label for="contactEmail">Su dirección de correo electrónico*</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="correo@ejemplo.com" required class="contact-modal__input">
+                            </div>
+                            
+                            <div class="contact-modal__field">
+                                <label for="contactSubject">Subject*</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="Asunto o tipo de proyecto" required class="contact-modal__input">
+                            </div>
+                            
+                            <div class="contact-modal__field">
+                                <label for="contactMessage">Message*</label>
+                                <textarea id="contactMessage" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required class="contact-modal__input contact-modal__textarea"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="contact-modal__submit" id="contactSubmitBtn">ENVIAR MENSAJE</button>
+                            <div id="contactStatus" class="contact-modal__status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./JS/menu.js"></script>
+    <script src="./JS/principles.js"></script>
+    <script src="./JS/scroll.js"></script>
+    <script src="./JS/network.js"></script>
+    <script src="./JS/servicesModal.js"></script>
+    <script src="./JS/contactModal.js"></script>
+    <script src="./JS/tilt.js"></script>
+</body>
+
+</html>

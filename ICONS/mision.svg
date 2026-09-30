@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="100%" height="100%">
+  <defs>
+    <filter id="shadow-mision" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+    <linearGradient id="ref-red" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EF2A5B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#EF2A5B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(100, 95)">
+    <!-- Reflejo inferior -->
+    <path d="M -65 82 A 75 14 0 0 0 65 82" fill="none" stroke="url(#ref-red)" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Círculo base -->
+    <circle cx="0" cy="0" r="78" fill="#FFFFFF" filter="url(#shadow-mision)"/>
+    
+    <!-- Anillo exterior -->
+    <circle cx="0" cy="0" r="74" fill="none" stroke="#E2E8F0" stroke-width="7"/>
+    <path d="M -74 0 A 74 74 0 0 1 74 0" fill="none" stroke="#EF2A5B" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Ícono -->
+    <g transform="translate(0, -12)">
+      <circle cx="0" cy="0" r="30" fill="none" stroke="#EF2A5B" stroke-width="3.5"/>
+      <path d="M -21 15 L -6 -6 L 5 7 L 11 0 L 21 15 Z" fill="#EF2A5B"/>
+      <path d="M -6 -6 L -6 -18 L 4 -13 L -6 -8" fill="#EF2A5B"/>
+    </g>
+
+    <!-- Texto -->
+    <text x="0" y="48" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="14" fill="#EF2A5B" text-anchor="middle" letter-spacing="1.5">MISIÓN</text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="100%" height="100%">
+  <defs>
+    <filter id="shadow-vision" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+    <linearGradient id="ref-blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#008BE3" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#008BE3" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(100, 95)">
+    <!-- Reflejo inferior -->
+    <path d="M -65 82 A 75 14 0 0 0 65 82" fill="none" stroke="url(#ref-blue)" stroke-width="5" stroke-linecap="round"/>
+    
+    <!-- Círculo base -->
+    <circle cx="0" cy="0" r="78" fill="#FFFFFF" filter="url(#shadow-vision)"/>
+    
+    <!-- Anillo exterior -->
+    <circle cx="0" cy="0" r="74" fill="none" stroke="#E2E8F0" stroke-width="7"/>
+    <path d="M -74 0 A 74 74 0 0 1 74 0" fill="none" stroke="#008BE3" stroke-width="7" stroke-linecap="round"/>
+    
+    <!-- Ícono -->
+    <g transform="translate(0, -12)">
+      <line x1="0" y1="-26" x2="0" y2="-20" stroke="#008BE3" stroke-width="3" stroke-linecap="round"/>
+      <line x1="-18" y1="-18" x2="-13" y2="-13" stroke="#008BE3" stroke-width="3" stroke-linecap="round"/>
+      <line x1="18" y1="-18" x2="13" y2="-13" stroke="#008BE3" stroke-width="3" stroke-linecap="round"/>
+      <line x1="-24" y1="-2" x2="-18" y2="-2" stroke="#008BE3" stroke-width="3" stroke-linecap="round"/>
+      <line x1="24" y1="-2" x2="18" y2="-2" stroke="#008BE3" stroke-width="3" stroke-linecap="round"/>
+      <path d="M -13 -4 C -13 -13, 13 -13, 13 -4 C 13 2, 7 6, 7 12 L -7 12 C -7 6, -13 2, -13 -4 Z" fill="none" stroke="#008BE3" stroke-width="3.5" stroke-linejoin="round"/>
+      <line x1="-5" y1="17" x2="5" y2="17" stroke="#008BE3" stroke-width="3.5" stroke-linecap="round"/>
+      <line x1="-3" y1="21" x2="3" y2="21" stroke="#008BE3" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M -4 12 L -2 4 L 2 4 L 4 12" fill="none" stroke="#008BE3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Texto -->
+    <text x="0" y="48" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="800" font-size="14" fill="#008BE3" text-anchor="middle" letter-spacing="1.5">VISIÓN</text>
+  </g>
+</svg>
