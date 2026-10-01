@@ -12,7 +12,7 @@ const servicesData = {
         title: "Diseño Mecánico",
         description: "Modelado y conceptualización de estructuras, fixturas, herramentales y celdas de trabajo en CAD 3D.",
         scope: "Desarrollamos soluciones mecánicas a la medida, estaciones manuales o automáticas, poka-yokes y modificaciones o mejoras a líneas de producción para la industria automotriz, de inyección de plástico y alimenticia.",
-        gallery: ["IMAGE/DIseño-mecanico/design1.jpg", "IMAGE/DIseño-mecanico/design2.jpg", "IMAGE/DIseño-mecanico/design3.jpg", "IMAGE/DIseño-mecanico/design4.jpg", "IMAGE/DIseño-mecanico/design5.jpg"]
+        gallery: ["IMAGE/DIseño-mecanico/design1.jpg", "IMAGE/DIseño-mecanico/design2.jpg", "IMAGE/DIseño-mecanico/design3.jpg", "IMAGE/DIseño-mecanico/design4.jpg", "IMAGE/DIseño-mecanico/design5.jpg", "IMAGE/robotica/robot7.jpeg"]
     },
     3: {
         category: "AUTOMATIZACIÓN Y PROGRAMACIÓN DE CONTROL",
@@ -26,7 +26,7 @@ const servicesData = {
         title: "Robótica Industrial",
         description: "Integración de brazos robóticos y cobots (robots colaborativos) para la automatización de procesos repetitivos y de alta precisión.",
         scope: "Implementamos celdas robotizadas para aplicaciones de atornillado, paletizado, manipulación de materiales, aplicación de hotmelt y procesos con requerimientos exigentes de producción.",
-        gallery: ["IMAGE/robotica/roboot1.png","IMAGE/robotica/robot2.jpeg", "IMAGE/robotica/robot3.jpeg", "IMAGE/robotica/robot4.jpeg","IMAGE/robotica/robot5.jpeg", "IMAGE/robotica/robot6.jpeg", "IMAGE/robotica/robot7.jpeg"]
+        gallery: ["IMAGE/robotica/roboot1.png","IMAGE/robotica/robot2.jpeg", "IMAGE/robotica/robot3.jpeg", "IMAGE/robotica/robot4.jpeg", "IMAGE/robotica/robot6.jpeg"]
     },
     5: {
         category: "INSPECCIÓN ÓPTICA Y CONTROL DE CALIDAD",
