@@ -75,9 +75,10 @@ body{
 }
 
 .nav__logo-img {
-    height: 70px;    /* Altura proporcional para la cápsula */
-    width: max-content;
-    filter: invert(1);                  /* Invierte el negro a blanco */
+    height: 40px;          /* Ajusta la altura proporcional a la cápsula */
+    width: auto !important;/* Obliga a Safari a no estirar el logo */
+    object-fit: contain;   /* Mantiene la proporción exacta en iOS */
+    filter: invert(1);
 }
 
 .nav__link{
@@ -1288,4 +1289,10 @@ body.no-scroll {
         height: 100vh !important;
         height: 100dvh !important; /* Ajusta al alto real de pantalla en Safari */
     }
+}
+
+/* Restricción global para evitar desbordamientos de imágenes en iOS Safari */
+img {
+    max-width: 100%;
+    height: auto;
 }
