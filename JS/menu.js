@@ -8,13 +8,13 @@
     // Función centralizada para abrir el menú móvil
     function openMobileMenu() {
         menu.classList.add('nav__link--show');
-        document.body.style.overflow = 'hidden'; // Bloquea totalmente el scroll de la página
+        document.body.classList.add('no-scroll'); // Activa el bloqueo compatible con iOS
     }
 
     // Función centralizada para cerrar el menú móvil
     function closeMobileMenu() {
         menu.classList.remove('nav__link--show');
-        document.body.style.overflow = ''; // Restaura el scroll de la página
+        document.body.classList.remove('no-scroll'); // Desactiva el bloqueo
     }
 
     if (openBtton && menu && closeMenu) {
