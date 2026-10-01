@@ -1,4 +1,7 @@
 (function () {
+    // Desactiva el efecto 3D en dispositivos táctiles (iPhone, Android, iPads) para evitar tirones
+    if (window.matchMedia('(pointer: coarse)').matches) return;
+
     // Escucha el movimiento del mouse sobre las imágenes de la galería del modal
     document.addEventListener('mousemove', (e) => {
         const img = e.target.closest('.service-modal__gallery img');
