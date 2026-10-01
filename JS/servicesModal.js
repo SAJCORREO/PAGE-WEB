@@ -12,7 +12,7 @@ const servicesData = {
         title: "Diseño Mecánico",
         description: "Modelado y conceptualización de estructuras, fixturas, herramentales y celdas de trabajo en CAD 3D.",
         scope: "Desarrollamos soluciones mecánicas a la medida, estaciones manuales o automáticas, poka-yokes y modificaciones o mejoras a líneas de producción para la industria automotriz, de inyección de plástico y alimenticia.",
-        gallery: ["IMAGE/DIseño-mecanico/design1.jpg", "IMAGE/DIseño-mecanico/design2.jpg", "IMAGE/DIseño-mecanico/design3.jpg", "IMAGE/DIseño-mecanico/design4.jpg", "IMAGE/DIseño-mecanico/design5.jpg", "IMAGE/robotica/robot7.jpeg"]
+        gallery: ["IMAGE/DIseño-mecanico/design1.jpg", "IMAGE/DIseño-mecanico/design2.jpg", "IMAGE/DIseño-mecanico/design3.jpg", "IMAGE/DIseño-mecanico/design4.jpg", "IMAGE/DIseño-mecanico/design5.jpg", "IMAGE/DIseño-mecanico/design6.jpeg"]
     },
     3: {
         category: "AUTOMATIZACIÓN Y PROGRAMACIÓN DE CONTROL",
