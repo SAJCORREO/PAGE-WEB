@@ -1296,3 +1296,35 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+
+/* ===== VISOR LIGHTBOX ULTRALIGERO ===== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92); 
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s linear; 
+    cursor: pointer;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
