@@ -24,8 +24,9 @@ const servicesData = {
     4: {
         category: "SISTEMAS ROBOTIZADOS E INTEGRACIÓN",
         title: "Robótica Industrial",
-        description: "Integración de brazos robóticos y cobots (robots colaborativos) para la automatización de procesos repetitivos y de alta precisión.",
+        description: "Integración de brazos robóticos, cobots (robots colaborativos) y AGVS para la automatización de procesos repetitivos y de alta precisión.",
         scope: "Implementamos celdas robotizadas para aplicaciones de atornillado, paletizado, manipulación de materiales, aplicación de hotmelt y procesos con requerimientos exigentes de producción.",
+        
         gallery: ["IMAGE/robotica/roboot1.png","IMAGE/robotica/robot2.jpeg", "IMAGE/robotica/robot3.jpeg", "IMAGE/robotica/robot4.jpeg", "IMAGE/robotica/robot6.jpeg"]
     },
     5: {
@@ -93,11 +94,16 @@ function openServiceModal(serviceId) {
         mediaContainer.style.display = 'block';
 
         data.gallery.forEach(imgSrc => {
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.alt = data.title;
-            galleryContainer.appendChild(img);
-        });
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = data.title;
+        img.style.cursor = 'pointer'; // Muestra que se puede hacer clic
+        
+        // Al hacer clic, abre la foto completa
+        img.onclick = () => openImageLightbox(imgSrc);
+        
+        galleryContainer.appendChild(img);
+    });
     } else {
         // Si es un servicio técnico puro sin fotos (del 6 al 10)
         grid.classList.add('no-gallery');
@@ -119,8 +125,34 @@ function closeServiceModal() {
 }
 
 // Cierre con la tecla ESC
+// Cierre inteligente con la tecla ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        closeServiceModal();
+        const lightbox = document.getElementById('imageLightbox');
+        
+        // 1. Si la foto ampliada está activa, cierra solo la foto
+        if (lightbox && lightbox.classList.contains('active')) {
+            closeImageLightbox();
+        } else {
+            // 2. Si no hay foto ampliada, cierra el modal de servicios
+            closeServiceModal();
+        }
     }
 });
+
+// Abrir imagen ampliada de forma instantánea
+function openImageLightbox(src) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    if (!lightbox || !lightboxImg) return;
+
+    lightboxImg.src = src; // Asigna la foto antes de mostrar el contenedor
+    lightbox.classList.add('active');
+}
+
+// Cerrar al dar clic
+function closeImageLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+}
