@@ -237,7 +237,7 @@ body{
     max-width: 320px; /* Evita que se estiren demasiado */
 }
 
-/* Envoltorio con habilitación de profundidad 3D */
+/* Contenedor transparente sin cuadro de fondo ni bordes */
 .services__img-wrapper {
     position: relative;
     width: 200px;
@@ -246,23 +246,24 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 800px; /* Crea el espacio en 3D */
+    perspective: 800px;
+    background: transparent; /* Sin fondo oscuro */
+    padding: 0;               /* Sin relleno extra */
+    box-shadow: none;        /* Sin sombra en el contenedor */
 }
 
-/* Estado inicial: Imagen acostada en 3D */
+/* Imagen limpia en 3D flotante sobre el fondo blanco */
 .services__img {
     cursor: pointer;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    /* rotateX inclina la imagen hacia atrás y rotateZ le da un ligero ángulo lateral */
     transform: rotateX(45deg) rotateZ(-10deg) scale(0.9);
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
     box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Estado Hover: La imagen se levanta, se pone recta de frente y se agranda */
 .services__card:hover .services__img {
     transform: rotateX(0deg) rotateZ(0deg) scale(1.12);
     box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
@@ -813,16 +814,19 @@ body{
     margin-top: 10px;
 }
 
+/* Galería interna del Modal de Servicios con imágenes completas */
 .service-modal__gallery img {
     width: 100%;
     height: 260px;
-    object-fit: cover;
+    object-fit: contain; /* Encaja la foto completa sin recortar dentro de la galería */
+    background: #0f172a;  /* Fondo oscuro para los bordes */
+    padding: 8px;
     border-radius: 14px;
     border: 2px solid rgba(32, 145, 249, 0.4);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     will-change: transform;
     transform-style: preserve-3d;
-    transition: transform 0.10s ease-out, border-color 0.5s ease;
+    transition: transform 0.15s ease-out, border-color 0.4s ease;
 }
 
 .service-modal__gallery img:hover {
@@ -1296,7 +1300,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-
 
 /* ===== VISOR LIGHTBOX ULTRALIGERO ===== */
 .lightbox {

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Terminados | SAJ TECHNOLOGIES</title>
+    <link rel="icon" href="/IMAGE/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/IMAGE/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/IMAGE/android-chrome-192x192.png">
+    
+    <!-- Hojas de Estilos -->
+    <link rel="stylesheet" href="./CSS/normalize.css">
+    <link rel="stylesheet" href="./CSS/stilesIndex.css">
+    <link rel="stylesheet" href="./CSS/stilesProyectos.css">
+    
+    <meta name="theme-color" content="#2091f9">    
+    <meta name="title" content="Proyectos Terminados - SAJ TECHNOLOGIES">
+    <meta name="description" content="Casos de éxito y proyectos de integración industrial, automatización, celdas robotizadas y visión artificial desarrollados por SAJ Technologies.">
+</head>
+
+<body>
+    <header class="hero hero--proyectos" id="principal">
+        <!-- Barra de Navegación Flotante -->
+        <nav class="nav container">
+            <div class="nav__logo">
+                <a href="index.html">
+                    <img src="./IMAGE/logoSAJ.png" alt="SAJ Technologies" class="nav__logo-img">
+                </a>
+            </div>
+            
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="index.html" class="nav__links">Pagina Principal</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#principal" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#proyectos" class="nav__links">Proyectos</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#pie" class="nav__links">Contacto</a>
+                </li>
+                <img src="ICONS/close.svg" alt="cerrar menu" class="nav__close">
+            </ul>
+            
+            <div class="nav__menu">
+                <img src="ICONS/list.svg" alt="Menú" class="nav__img">
+            </div>
+        </nav>
+
+        <!-- Banner Superior -->
+        <section class="hero__container container">
+            <h1 class="hero__title">Proyectos Terminados</h1>
+            <p class="hero__paragraph">Conoce algunas de nuestras soluciones de ingeniería e integración entregadas con éxito en el sector industrial.</p>
+        </section>
+    </header>
+
+    <main>
+        <!-- Sección Principal de Proyectos en 3 Columnas Fijas con Scroll Lateral -->
+        <section class="projects container reveal" id="proyectos">
+            <div class="projects__layout">
+                
+                <!-- Columna Izquierda con Scroll -->
+                <div class="projects__col projects__col--left">
+                    <div class="projects__scroll-box">
+                        <article class="projects__card" onclick="openProjectDrawer('left', 1)">                        
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/integration.jpeg" alt="Proyecto 1" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">INTEGRACION</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('left', 2)">
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/atornillado.jpeg" alt="Proyecto 2" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">ATORNILLADO</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('left', 3)">
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/go-no-go.jpeg" alt="Proyecto 3" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">GO NO GO</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('left', 4)">
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/sensores.jpeg" alt="Proyecto 4" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">SENSORES</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('left', 5)">
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/soporte.jpeg" alt="Proyecto 5" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">SOPORTE</h3>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Columna Central Fija: Video MP4 -->
+                <div class="projects__center">
+                    <div class="projects__mascot-wrapper">
+                        <video class="projects__mascot-video" autoplay loop muted playsinline>
+                            <source src="CLIPS/sajotoo_clip.mp4" type="video/mp4">
+                            Tu navegador no soporta reproducción de video.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha con Scroll -->
+                <div class="projects__col projects__col--right">
+                    <div class="projects__scroll-box">
+                        <article class="projects__card" onclick="openProjectDrawer('right', 6)">
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/agv.jpeg" alt="Proyecto 6" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">AGV & AMR</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('right', 7)">                        
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/conveyor.jpeg" alt="Proyecto 7" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">CONVEYOR</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('right', 8)">                        
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/robotica.jpeg" alt="Proyecto 8" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">ROBOTICA</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('right', 9)">                        
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/maquinados.jpeg" alt="Proyecto 9" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">MAQUINADOS</h3>
+                        </article>
+
+                        <article class="projects__card" onclick="openProjectDrawer('right', 10)">                        
+                            <div class="projects__img-wrapper">
+                                <img src="IMAGE/Proyectos_terminados/portadas/production.jpeg" alt="Proyecto 10" class="projects__img">
+                            </div>
+                            <h3 class="projects__subtitle">LINEAS DE PRODUCCION</h3>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botón de Retorno -->
+            <div class="projects__return-container">
+                <a href="index.html" class="services_cta">Página Principal</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Corporativo -->
+    <footer class="footer" id="pie">
+        <div class="footer__card container">
+            <section class="footer__container">
+                <div class="footer__col">
+                    <img src="./IMAGE/logo-saj-T.png" alt="SAJ Technologies" class="nav__logo-img">
+                    <h2 class="footer__name">SAJ CONTROLS S.A. de C.V.</h2>
+                </div>  
+
+                <div class="footer__col">
+                    <div class="footer__info-group">
+                        <h3 class="footer__title">Horario</h3>
+                        <p class="footer__subtitle">Lunes a Viernes: 9:30am - 07:00pm</p>                
+                    </div>      
+                    <div class="footer__info-group">
+                        <h3 class="footer__title">Ubicación</h3>
+                        <p class="footer__subtitle">León, Gto México</p>                
+                    </div>    
+                    <div class="footer__info-group">               
+                        <h3 class="footer__title">Número De Oficina</h3>
+                        <p class="footer__subtitle">(+52) (477) 829 7793</p>
+                    </div>        
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__title">Contáctanos</h3>
+                    <p class="footer__subtitle">contacto@sajtechnologies.com</p>
+                    <p class="footer__divider">Ó escríbenos directamente</p>
+                    <button type="button" class="services_cta" onclick="openContactModal()">Contáctanos</button>
+                </div>
+            </section> 
+
+            <section class="footer__copy">
+                <div class="footer__social">
+                    <a href="https://www.facebook.com/profile.php?id=61558043161836" class="footer__icon-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/facebook.svg" alt="facebook" class="footer__img">
+                    </a>
+                    <a href="https://www.instagram.com/saj.technologies" class="footer__icon-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/instagram.svg" alt="instagram" class="footer__img">
+                    </a>
+                    <a href="https://www.tiktok.com/@saj.technologies" class="footer__icon-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/tiktok.svg" alt="tiktok" class="footer__img">
+                    </a>
+                    <a href="https://www.youtube.com/@SAJTECHNOLOGIES" class="footer__icon-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/youtube.svg" alt="youtube" class="footer__img">
+                    </a>
+                    <a href="https://www.linkedin.com/in/saj-technologies-a21870301" class="footer__icon-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <img src="./ICONS/linkedin.svg" alt="linkedin" class="footer__img">
+                    </a>
+                </div>
+                <p class="footer__copyright">Copyright (C) 2026 SAJ TECHNOLOGIES. All Rights Reserved.</p>
+            </section>
+        </div>
+    </footer>
+
+   <!-- MODAL LATERAL/DRAWER DINÁMICO DE DETALLES DEL PROYECTO -->
+    <div class="project-drawer" id="projectDrawer">
+        <div class="project-drawer__backdrop" onclick="closeProjectDrawer()"></div>
+        
+        <div class="project-drawer__container" id="drawerContainer">
+    
+            <!-- La 'X' se coloca directo en el contenedor -->
+            <button class="project-drawer__close" onclick="closeProjectDrawer()">✕</button>
+            
+            <div class="project-drawer__grid" id="projectGrid">
+                
+                <!-- Los títulos van DENTRO del bloque de descripción -->
+                <div class="project-drawer__desc-box">
+                    <span class="project-drawer__tag" id="projectCategory">DETERMINANDO...</span>
+                    <h2 class="project-drawer__title" id="projectTitle">Título del Proyecto</h2>
+                    
+                    <h3>Descripción del Proyecto</h3>
+                    <p id="projectDescription">Cargando detalles...</p>
+                </div>
+                
+                <!-- Bloque Slider de Imágenes -->
+                <div class="project-drawer__slider-box">
+                    <div class="project-drawer__track-wrapper">
+                        <div class="project-drawer__track" id="projectTrack"></div>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="project-drawer__dots" id="projectDots"></div>
+        </div>
+    </div>
+
+    <!-- MODAL DINÁMICO DE CONTACTO -->
+    <div class="contact-modal" id="contactModal">
+        <div class="contact-modal__backdrop" onclick="closeContactModal()"></div>
+        <div class="contact-modal__container">
+            <button class="contact-modal__close" onclick="closeContactModal()">✕</button>
+            <div class="contact-modal__content">
+                <span class="contact-modal__tag">ATENCIÓN POR CORREO</span>
+                <h2 class="contact-modal__title">Ponte en contacto con SAJ</h2>
+                <div class="contact-modal__grid">
+                    <div class="contact-modal__info">
+                        <h3>Atención Directa</h3>
+                        <p>Cuéntanos sobre tus requerimientos de ingeniería, automatización o mantenimiento industrial. Nuestro equipo te responderá a la brevedad.</p>
+                        <div class="contact-modal__details">
+                            <div class="contact-modal__item">
+                                <strong>Correo Oficial:</strong>
+                                <p>contacto@sajtechnologies.com</p>
+                            </div>
+                            <div class="contact-modal__item">
+                                <strong>Teléfono de Oficina:</strong>
+                                <p>(+52) (477) 829 7793</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-modal__form-wrapper">
+                        <form id="contactForm" class="contact-modal__form">
+                            <input type="hidden" name="access_key" value="82830a65-3637-4b59-805d-ada1cfc5cceb">
+                            <div class="contact-modal__field">
+                                <label for="contactName">Su nombre*</label>
+                                <input type="text" id="contactName" name="name" placeholder="Tu nombre o empresa" required class="contact-modal__input">
+                            </div>
+                            <div class="contact-modal__field">
+                                <label for="contactEmail">Su dirección de correo electrónico*</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="correo@ejemplo.com" required class="contact-modal__input">
+                            </div>
+                            <div class="contact-modal__field">
+                                <label for="contactSubject">Subject*</label>
+                                <input type="text" id="contactSubject" name="subject" placeholder="Asunto o tipo de proyecto" required class="contact-modal__input">
+                            </div>
+                            <div class="contact-modal__field">
+                                <label for="contactMessage">Message*</label>
+                                <textarea id="contactMessage" name="message" rows="4" placeholder="Escribe tu mensaje aquí..." required class="contact-modal__input contact-modal__textarea"></textarea>
+                            </div>
+                            <button type="submit" class="contact-modal__submit" id="contactSubmitBtn">ENVIAR MENSAJE</button>
+                            <div id="contactStatus" class="contact-modal__status"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VISOR LIGHTBOX PARA AMPLIAR FOTOS -->
+    <div class="lightbox" id="imageLightbox" onclick="closeImageLightbox()">
+        <img id="lightboxImg" src="" alt="Imagen ampliada">
+    </div>
+
+    <!-- Scripts de Funcionalidad -->
+    <script src="./JS/menu.js"></script>
+    <script src="./JS/scroll.js"></script>
+    <script src="./JS/contactModal.js"></script>
+    <script src="./JS/tilt.js"></script>
+    <script src="./JS/projectsModal.js"></script>
+    <script src="./JS/lightbox.js"></script>
+</body>
+
+</html>

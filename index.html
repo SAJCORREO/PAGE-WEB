@@ -31,7 +31,10 @@
                     <a href="#principal" class="nav__links">Inicio</a>
                 </li>
                 <li class="nav__items">
-                    <a href="#servicios" class="nav__links">Acerca de</a>
+                    <a href="#servicios" class="nav__links">Servicios</a>
+                </li>
+                <li class="nav__items">
+                    <a href="proyecto.html" class="nav__links">Proyectos Terminados</a>
                 </li>
                 <li class="nav__items">
                     <a href="#Principios" class="nav__links">Principios</a>
@@ -53,8 +56,7 @@
         <!-- Lo que tenemos una vez entramos a la pagina -->
         <section class="hero__container container">
             <h1 class="hero__title">Integración y automatización en el Bajío.</h1>
-            <p class="hero__paragraph">Somos SAJ una empresa mexicana multidisciplinaria que se especializa en integración de proyectos, que unifica las áreas de la ingeniería y el trabajo técnico para poder satisfacer todas las necesidades de nuestros clientes.</p>
-            <!--<a href="#servicios" class="cta">Conocer mas</a>-->
+            <p class="hero__paragraph">Somos SAJ una empresa mexicana multidisciplinaria que se especializa en integración de proyectos, que unifica las áreas de la ingeniería y el trabajo técnico para poder satisfacer todas las necesidades de nuestros clientes.</p>            
         </section>
 
     </header>
@@ -98,7 +100,7 @@
                         <img src="IMAGE/robotica_industrial.jpg" alt="PLCS" class="services__img">                        
                     </div>
                     <h3 class="services__subtitle">Robótica Industrial.</h3>
-                    <p class="services__paragraph">Integración de brazos robóticos, cobots (robots colaborativos) y AGVS para la automatización de procesos repetitivos y de alta precisión.</p>
+                    <p class="services__paragraph">Integración de brazos robóticos,cobots (robots colaborativos) y AGVS para la automatización de procesos repetitivos y de alta precisión.</p>
                 </article>
 
                 <!--Tarjeta numero 5-->
@@ -108,6 +110,15 @@
                     </div>
                     <h3 class="services__subtitle">Ingeniería De Visión</h3>
                     <p class="services__paragraph">Implementación de sistemas de inspección óptica y detección mediante cámaras avanzadas e inteligencia artificial.</p>
+                </article>
+
+                <!--Tarjeta numero 11(se agrego al ultimo y para no modifcar todo solo se agrego el necesario)-->
+                <article class="services__card" onclick="openServiceModal(11)">
+                    <div class="services__img-wrapper">
+                        <img src="IMAGE/scada.png" alt="SACADA" class="services__img">                        
+                    </div>
+                    <h3 class="services__subtitle">Sistema SCADA</h3>
+                    <p class="services__paragraph">Optimizamos la eficiencia industrial mediante el desarrollo de sistemas SCADA, automatización de procesos y análisis de datos en tiempo real.</p>
                 </article>
             </div>
 
@@ -158,12 +169,12 @@
                     <p class="services__paragraph">Fabricación de piezas mecánicas de alta precisión mediante procesos de maquinado CNC y convencional.</p>
                 </article>
             </div>
-            <!--
+            
             <div class="services__more">
                 <h3 class="services__title">Conoce mas acerca de nuestros proyectos terminados</h3>
-                <a href="#", class="services_cta">Conooce mas</a>
+                <a href="proyecto.html", class="services_cta">Conocer mas</a>
             </div>
-            -->
+            
         </section> 
 
         <section class="beggin reveal" id="Principios">

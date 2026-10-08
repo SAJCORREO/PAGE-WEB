@@ -5,21 +5,21 @@ const servicesData = {
         title: "Diseño Eléctrico",
         description: "Elaboración de esquemas y arquitectura de control eléctrico para maquinaria e integración industrial.",
         scope: "Diseñamos diagramas eléctricos normalizados, dimensionamos protección de circuitos y distribuimos componentes dentro de tablero de control garantizando la eficiencia energética y la seguridad operativa.",        
-        gallery: ["IMAGE/DIseño-electrico/gabinete1.jpg", "IMAGE/DIseño-electrico/gabinete2.jpg", "IMAGE/DIseño-electrico/gabinete3.jpg", "IMAGE/DIseño-electrico/design4.jpeg", "IMAGE/DIseño-electrico/design5.jpeg"]
+        gallery: ["IMAGE/Servicios/DIseño-electrico/gabinete1.jpg", "IMAGE/Servicios/DIseño-electrico/gabinete2.jpg", "IMAGE/Servicios/DIseño-electrico/gabinete3.jpg", "IMAGE/Servicios/DIseño-electrico/design4.jpeg", "IMAGE/Servicios/DIseño-electrico/design5.jpeg"]
     },
     2: {
         category: "INGENIERÍA CAD Y MODELADO 3D",
         title: "Diseño Mecánico",
         description: "Modelado y conceptualización de estructuras, fixturas, herramentales y celdas de trabajo en CAD 3D.",
         scope: "Desarrollamos soluciones mecánicas a la medida, estaciones manuales o automáticas, poka-yokes y modificaciones o mejoras a líneas de producción para la industria automotriz, de inyección de plástico y alimenticia.",
-        gallery: ["IMAGE/DIseño-mecanico/design1.jpg", "IMAGE/DIseño-mecanico/design2.jpg", "IMAGE/DIseño-mecanico/design3.jpg", "IMAGE/DIseño-mecanico/design4.jpg", "IMAGE/DIseño-mecanico/design5.jpg", "IMAGE/DIseño-mecanico/design6.jpeg"]
+        gallery: ["IMAGE/Servicios/DIseño-mecanico/design1.jpg", "IMAGE/Servicios/DIseño-mecanico/design2.jpg", "IMAGE/Servicios/DIseño-mecanico/design3.jpg", "IMAGE/Servicios/DIseño-mecanico/design4.jpg", "IMAGE/Servicios/DIseño-mecanico/design5.jpg", "IMAGE/Servicios/DIseño-mecanico/design6.jpeg"]
     },
     3: {
         category: "AUTOMATIZACIÓN Y PROGRAMACIÓN DE CONTROL",
         title: "Ingeniería en Control (PLCs)",
         description: "Automatización y lógica de procesos mediante la programación de controladores lógicos programables (PLC) e interfaces de usuario.",
         scope: "Realizamos la programación de sistemas de control, integración de PLC y HMI de las principales marcas del mercado (Allen-Bradley, Siemens, Mitsubishi, Schneider, Omron, Keyence) y selección del hardware adecuado para la inspección y viabilidad de cada aplicación.",
-        gallery: ["IMAGE/plcs/allen.jpg", "IMAGE/plcs/siemens.png","IMAGE/plcs/hmi.jpg", "IMAGE/plcs/mitsu.png", "IMAGE/plcs/omron.png", "IMAGE/plcs/omron2.jpg"]
+        gallery: ["IMAGE/Servicios/plcs/allen.jpg", "IMAGE/Servicios/plcs/siemens.png","IMAGE/Servicios/plcs/hmi.jpg", "IMAGE/Servicios/plcs/mitsu.png", "IMAGE/Servicios/plcs/omron.png", "IMAGE/Servicios/plcs/omron2.jpg"]
     },
     4: {
         category: "SISTEMAS ROBOTIZADOS E INTEGRACIÓN",
@@ -27,14 +27,14 @@ const servicesData = {
         description: "Integración de brazos robóticos, cobots (robots colaborativos) y AGVS para la automatización de procesos repetitivos y de alta precisión.",
         scope: "Implementamos celdas robotizadas para aplicaciones de atornillado, paletizado, manipulación de materiales, aplicación de hotmelt y procesos con requerimientos exigentes de producción.",
         
-        gallery: ["IMAGE/robotica/roboot1.png","IMAGE/robotica/robot2.jpeg", "IMAGE/robotica/robot3.jpeg", "IMAGE/robotica/robot4.jpeg", "IMAGE/robotica/robot6.jpeg"]
+        gallery: ["IMAGE/Servicios/robotica/roboot1.png","IMAGE/Servicios/robotica/robot2.jpeg", "IMAGE/Servicios/robotica/robot3.jpeg", "IMAGE/Servicios/robotica/robot4.jpeg", "IMAGE/Servicios/robotica/robot6.jpeg"]
     },
     5: {
         category: "INSPECCIÓN ÓPTICA Y CONTROL DE CALIDAD",
         title: "Ingeniería de Visión",
         description: "Implementación de sistemas de inspección óptica y detección mediante cámaras avanzadas e inteligencia artificial.",
         scope: "Configuramos sensores e imágenes inteligentes para control de calidad, verificación de ensamble, presencia/ausencia de componentes y validación de parámetros en tiempo real en la línea de producción.",
-        gallery: ["IMAGE/vision/camera1.jpeg", "IMAGE/vision/camera2.jpeg", "IMAGE/vision/camera3.jpeg", "IMAGE/vision/camera4.jpeg"]
+        gallery: ["IMAGE/Servicios/vision/camera1.jpeg", "IMAGE/Servicios/vision/camera2.jpeg", "IMAGE/Servicios/vision/camera3.jpeg", "IMAGE/Servicios/vision/camera4.jpeg"]
     },
     6: {
         category: "MONTAJE E INTEGRACIÓN DE CELDAS",
@@ -65,7 +65,14 @@ const servicesData = {
         title: "Maquinados Industriales",
         description: "Fabricación de piezas mecánicas de alta precisión mediante procesos de maquinado CNC y convencional.",
         scope: "Fabricamos fixtures, placas, componentes mecánicos a medida y refaccionamiento con estrictas tolerancias de calidad y acabados industriales superiores."
-    }
+    },
+    11: {
+        category: "INSPECCION OPTICA Y CONTROL DE CALIDAD",
+        title: "Sistema SCADA",
+        description: "Plataforma integral de automatización industrial, adquisición de datos en tiempo real y control supervisor (SCADA). Combina sistemas embebidos, comunicación bidireccional con PLCs y bases de datos robustas para garantizar la trazabilidad total de los procesos productivos.",
+        scope: "Desarrollo de paneles visuales intuitivos mediante protocolos industriales y comunicación bidireccional. Incluye almacenamiento estructurado en bases de datos relacionales y No relacionales (SQL, PostgreSQL, MySQL/MariaDB, MongoDB, Redis, Cassandra, Neo4j), registro automatizado de tiempos muertos y generación de reportes ejecutivos multiplataforma (Excel, dashboards web y APIs), respaldado por software escalable y arquitecturas de red industrial.",
+        gallery: ["IMAGE/Servicios/SCADA/scada1.jpeg", "IMAGE/Servicios/SCADA/scada2.jpeg", "IMAGE/Servicios/SCADA/scada3.jpeg", "IMAGE/Servicios/SCADA/scada4.jpeg"]
+    },
 };
 
 // Función para abrir el modal inyectando la información

@@ -1,0 +1,722 @@
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS - PÁGINA DE PROYECTOS (DRAWER EXPANDIDO A 3/4)
+   ========================================================================== */
+
+/* ==========================================================================
+   CABECERA PRINCIPAL HERO - PROYECTOS (DE BORDE A BORDE)
+   ========================================================================== */
+
+.hero--proyectos {
+    position: relative;
+    width: 100%;
+    height: 70vh !important;     /* Aumentado de 55vh a 70vh para mayor altura */
+    min-height: 520px !important; /* Garantiza más espacio vertical */
+    max-height: 700px !important; /* Permite que el banner se extienda más abajo */
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important; /* Llena exactamente el 100% del contenedor */
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.65) 100%), url(../IMAGE/logo-saj-.jpg);
+    background-size: cover !important; /* Cubre 100% ancho y alto sin franjas negras laterales */
+    background-position: center center !important;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.hero__title {
+    margin-top: 160px; /* Reajustado para mantener el texto bien centrado */
+    font-size: 3rem;
+}
+
+.hero__paragraph {
+    font-size: 1.2rem;
+    color: #F2F2F2;
+}
+
+/* Layout Principal de 3 Columnas */
+.projects {
+    padding: 60px 20px;
+    margin-top: 170px;
+    max-width: 100% !important;
+    width: 95% !important;
+}
+
+.projects__layout {
+    display: grid;
+    grid-template-columns: 1fr 420px 1fr;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects__col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.projects__card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(32, 145, 249, 0.15);
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.projects__img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    overflow: visible;
+}
+
+.projects__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transform: rotateX(25deg) rotateZ(4deg) scale(0.92) translateZ(0);
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    box-shadow: -10px 15px 20px rgba(0, 0, 0, 0.25);
+}
+
+.projects__col--right .projects__img {
+    transform: rotateX(25deg) rotateZ(-4deg) scale(0.92) translateZ(0);
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.25);
+}
+
+.projects__card:hover .projects__img {
+    transform: rotateX(0deg) rotateZ(0deg) scale(1.05) translateZ(0);
+    box-shadow: 0px 15px 25px rgba(32, 145, 249, 0.3);
+    z-index: 10;
+}
+
+.projects__subtitle {
+    color: var(--color-title);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 5px 0 0 0;
+}
+
+.projects__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects__mascot-wrapper {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(32, 145, 249, 0.12) 0%, transparent 75%);
+    border-radius: 24px;
+    animation: flotarMascota 4s ease-in-out infinite;
+}
+
+.projects__mascot-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes flotarMascota {
+    0%, 100% { transform: translateY(0) translateZ(0); }
+    50% { transform: translateY(-10px) translateZ(0); }
+}
+
+.projects__return-container {
+    margin-top: 60px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   PANEL LATERAL DESLIZANTE (PROJECT DRAWER) - LIMPIO Y OPTIMIZADO
+   ========================================================================== */
+
+.project-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s linear;
+}
+
+.project-drawer.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.project-drawer__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 15, 25, 0.82);
+}
+
+/* Contenedor del Modal (3/4 de pantalla) */
+.project-drawer__container {
+    position: relative;
+    z-index: 2;
+    width: 95%;
+    max-width: 1350px;
+    height: 85vh;
+    background: #ffffff;
+    padding: 45px;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-drawer--left .project-drawer__container {
+    border-radius: 0 28px 28px 0;
+    transform: translate3d(-100%, 0, 0);
+}
+.project-drawer.active.project-drawer--left .project-drawer__container {
+    transform: translate3d(0, 0, 0);
+}
+
+.project-drawer--right {
+    justify-content: flex-end;
+}
+.project-drawer--right .project-drawer__container {
+    border-radius: 28px 0 0 28px;
+    transform: translate3d(100%, 0, 0);
+}
+.project-drawer.active.project-drawer--right .project-drawer__container {
+    transform: translate3d(0, 0, 0);
+}
+
+/* Botón de cierre 'X' flotante */
+.project-drawer__close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Cuando abre desde la derecha, la 'X' cambia al lado izquierdo */
+.project-drawer--right .project-drawer__close {
+    left: 25px;
+    right: auto;
+}
+
+.project-drawer__close:hover {
+    background: #ff2a5f;
+    color: #ffffff;
+}
+
+/* Cuadrícula interna de 2 columnas */
+.project-drawer__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 50px;
+    align-items: start;
+    margin-top: 15px;
+    flex: 1;
+}
+
+.project-drawer--right .project-drawer__grid {
+    grid-template-columns: 1.3fr 1fr;
+}
+.project-drawer--right .project-drawer__desc-box {
+    order: 2;
+}
+.project-drawer--right .project-drawer__slider-box {
+    order: 1;
+}
+
+/* Títulos integrados en la columna de descripción */
+.project-drawer__tag {
+    display: block;
+    color: #2091f9;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.project-drawer__title {
+    color: var(--color-title);
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.project-drawer__desc-box h3 {
+    color: var(--color-title);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.project-drawer__desc-box p {
+    color: #475569;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Caja del Slider de Fotos con reencuadre completo de imagen */
+.project-drawer__slider-box {
+    position: relative;
+    width: 100%;
+}
+
+.project-drawer__track-wrapper {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #0f172a; /* Fondo oscuro elegante para los bordes de la imagen */
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.project-drawer__track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.project-drawer__slide {
+    min-width: 100% !important;
+    width: 100% !important;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Margen interno para encuadrar la foto */
+}
+
+.project-drawer__slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Muestra la imagen 100% completa sin recortar */
+    cursor: pointer;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Puntos de navegación ubicados abajo al centro del contenedor completo */
+.project-drawer__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+.project-drawer__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.project-drawer__dot--active {
+    background: #2091f9;
+    transform: scale(1.3);
+}
+
+/* Scroll independiente de las columnas laterales */
+.projects__scroll-box {
+    max-height: 440px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    
+    -webkit-mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(32, 145, 249, 0.4) transparent;
+}
+
+.projects__scroll-box::-webkit-scrollbar {
+    width: 6px;
+}
+.projects__scroll-box::-webkit-scrollbar-thumb {
+    background-color: rgba(32, 145, 249, 0.4);
+    border-radius: 10px;
+}
+
+.projects__center {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== VISOR LIGHTBOX OPTIMIZADO PARA MÁXIMO RENDIMIENTO ===== */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92); 
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    opacity: 0;
+    pointer-events: none;
+    
+    /* Aceleración en GPU y aislamiento del DOM */
+    will-change: opacity;
+    transform: translateZ(0);
+    transition: opacity 0.12s linear; 
+    cursor: pointer;
+    contain: strict;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    
+    /* Evita parpadeos o tirones al renderizar la foto en pantalla completa */
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN / MEDIA QUERIES - PÁGINA DE PROYECTOS
+   ========================================================================== */
+
+/* 1. Laptops y Pantallas Medianas (Hasta 1200px) */
+@media (max-width: 1200px) {
+    .hero--proyectos {
+        height: 60vh !important;
+        min-height: 450px !important;
+        max-height: 600px !important;
+    }
+
+    .hero::before {
+        height: 10% !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+
+    .hero__title {
+        margin-top: 140px;
+        font-size: 2.8rem;
+    }
+
+    .hero__paragraph {
+        font-size: 1.2rem;
+    }
+
+    .projects__layout {
+        grid-template-columns: 1fr 350px 1fr;
+        gap: 20px;
+    }
+
+    .project-drawer__container {
+        padding: 35px;
+        max-width: 95%;
+    }
+
+    .project-drawer__grid {
+        gap: 30px;
+    }
+}
+
+/* 2. Tablets en Modo Retrato y Celulares Anchos (Hasta 800px) */
+@media (max-width: 800px) {
+    /* CABECERA: Altura reducida para evitar zoom vertical excesivo en formato retrato */
+    .hero--proyectos {
+        position: relative !important;
+        width: 100% !important;
+        height: 35vh !important;
+        min-height: 250px !important;
+        max-height: 340px !important;
+        overflow: hidden !important;
+    }
+
+    .hero::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%), url(../IMAGE/logo-saj-.jpg) !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        z-index: -1 !important;
+    }
+
+    .hero__container {
+        padding: 0 15px !important;
+        text-align: center !important;
+    }
+
+    .hero__title {
+        margin-top: 80px !important; /* Ajustado proporcionalmente a la nueva altura */
+        font-size: 1.7rem !important;
+        color: #ffffff !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero__paragraph {
+        font-size: 0.9rem !important;
+        color: #F2F2F2 !important;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    /* SECCIÓN DE PROYECTOS (ESTRUCTURA INTACTA) */
+    .projects {
+        margin-top: 25px;
+        padding: 20px 5px;
+        width: 100% !important;
+    }
+
+    .projects__layout {
+        grid-template-columns: 120px 1fr 120px;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .projects__scroll-box {
+        max-height: 380px;
+        padding-right: 0;
+    }
+
+    .projects__card {
+        padding: 8px;
+        border-radius: 12px;
+    }
+
+    .projects__img-wrapper {
+        height: 100px;
+        margin-bottom: 8px;
+    }
+
+    .projects__subtitle {
+        font-size: 0.75rem;
+    }
+
+    .projects__mascot-wrapper {
+        max-width: 100%;
+    }
+
+    /* Modal Drawer adaptado a 1 sola columna vertical */
+    .project-drawer__container {
+        width: 95%;
+        height: 88vh;
+        padding: 25px;
+        border-radius: 20px !important;
+    }
+
+    /* FUERZA LA "X" A LA DERECHA Y ANULA EL POSICIONAMIENTO DE ESCRITORIO EN TABLETS */
+    .project-drawer__close,
+    .project-drawer--right .project-drawer__close {
+        left: auto !important;
+        right: 20px !important;
+        top: 20px !important;
+        z-index: 10 !important;
+    }
+
+    .project-drawer__grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        margin-top: 35px !important; /* Margen superior para que el texto no choque con la X */
+    }
+
+    .project-drawer--right .project-drawer__desc-box,
+    .project-drawer--right .project-drawer__slider-box {
+        order: unset;
+    }
+
+    .project-drawer__title {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .project-drawer__track-wrapper {
+        height: 280px;
+    }
+}
+
+
+/* ==========================================================================
+   3. DISPOSITIVOS MÓVILES (Hasta 600px - Bloque Único y Limpio)
+   ========================================================================== */
+@media (max-width: 600px) {
+    
+    /* --- 1. CABECERA HERO --- */
+    .hero--proyectos {
+        position: relative !important;
+        width: 100% !important;
+        height: 280px !important;
+        min-height: 250px !important;
+        max-height: 320px !important;
+        overflow: hidden !important;
+        background-color: #0f172a !important;
+    }
+
+    .hero::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.75) 100%), url(../IMAGE/logo-saj-.jpg) !important;
+        background-size: cover !important;
+        /* Enfoca el lado derecho para leer perfectamente SAJ TECHNOLOGIES */
+        background-position: 82% center !important; 
+        background-repeat: no-repeat !important;
+        z-index: 1 !important;
+    }
+
+    .hero__container {
+        position: relative !important;
+        z-index: 2 !important;
+        padding: 0 15px !important;
+        text-align: center !important;
+    }
+
+    .hero__title {
+        margin-top: 85px !important;
+        font-size: 1.45rem !important;
+        color: #ffffff !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95) !important;
+    }
+
+    .hero__paragraph {
+        font-size: 0.82rem !important;
+        line-height: 1.4 !important;
+        color: #f1f5f9 !important;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95) !important;
+    }
+
+    /* --- 2. TARJETAS DE PROYECTOS (Ajuste Móvil) --- */
+    .projects {
+        margin-top: 20px !important;
+        padding: 15px 5px !important;
+    }
+
+    .projects__layout {
+        grid-template-columns: 90px 1fr 90px !important;
+        gap: 10px !important;
+    }
+
+    .projects__scroll-box {
+        max-height: 320px !important;
+    }
+
+    .projects__img-wrapper {
+        height: 80px !important;
+    }
+
+    .projects__subtitle {
+        font-size: 0.7rem !important;
+    }
+
+    /* --- 3. MODAL / DRAWER (Adaptación a 1 sola columna) --- */
+    .project-drawer {
+        align-items: flex-end !important; /* Aparece desde abajo en celular */
+    }
+
+    .project-drawer__container {
+        width: 100% !important;
+        height: 90vh !important;
+        height: 90dvh !important;
+        padding: 25px 20px !important;
+        border-radius: 24px 24px 0 0 !important;
+    }
+
+    /* FUERZA LA "X" A LA DERECHA Y ANULA EL POSICIONAMIENTO DE ESCRITORIO */
+    .project-drawer__close,
+    .project-drawer--right .project-drawer__close {
+        left: auto !important;
+        right: 15px !important;
+        top: 15px !important;
+        width: 38px !important;
+        height: 38px !important;
+        z-index: 10 !important;
+    }
+
+    /* Da un margen superior al contenido para que la "X" tenga su propio espacio libre */
+    .project-drawer__grid {
+        margin-top: 30px !important;
+    }
+
+    .project-drawer__track-wrapper {
+        height: 220px !important; 
+    }
+    
+    .project-drawer__title {
+        font-size: 1.4rem !important;
+        margin-bottom: 10px !important;
+    }
+}
